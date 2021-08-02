@@ -28,6 +28,6 @@ class Foobar
 end
 
 ## main
-max_foobar = ARGV[0] != nil ? ARGV[0] : 17;
+max_foobar = ARGV[0] != nil ? ARGV[0].to_i() : 17;
 session = Foobar::new(max_foobar);
 session.invoke();

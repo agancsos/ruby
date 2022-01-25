@@ -20,7 +20,7 @@ class BootCreater
         image_name = File.basename(@image_path).split(".")[0];
         if (!@debug)
             puts(`diskutil eraseDisk HFS+ "#{image_name}" #{@dev_path}`);
-            puts(`sudo "#{@image_path}/Contents/Resources/createinstallmedia" --volume "/Volume/#{image_path}"`);
+            puts(`sudo "#{@image_path}/Contents/Resources/createinstallmedia" --volume "/Volume/#{image_name}"`);
         end
     end
 end

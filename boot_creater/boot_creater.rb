@@ -19,7 +19,7 @@ class BootCreater
         raise "Script must be ran as sudo..." if `whoami`.strip != "root";
         image_name = File.basename(@image_path).split(".")[0];
         if (!@debug)
-            puts(`diskutil eraseDisk HFS+ <drive-target-name> <dev-path>`);
+            puts(`diskutil eraseDisk HFS+ "#{image_name}" #{@dev_path}`);
             puts(`sudo "#{@image_path}/Contents/Resources/createinstallmedia" --volume "/Volume/#{image_path}"`);
         end
     end
